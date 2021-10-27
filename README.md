@@ -18,6 +18,15 @@
 - Webpack
 - Linters
 
+## Set up locally
+
+- Open your terminal and run the following command: git clone https://github.com/AlexRS90/to-do-list.git
+- Run the command "npm install"
+- Run the command "npm run build"
+- Run the command "npm run start"
+
+Once you completed this steps you shuold see the app running at: http://localhost:8080/ in your browser.
+
 ## Author 👤
 
 👤 **Alejandro Ramos**
