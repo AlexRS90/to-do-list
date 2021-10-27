@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import './style.css';
 import Dots from './icons/dots.png';
 import Load from './icons/reload.png';
