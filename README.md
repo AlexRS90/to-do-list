@@ -25,7 +25,7 @@
 - Run the command "npm run build"
 - Run the command "npm run start"
 
-Once you completed this steps you shuold see the app running at: http://localhost:8080/ in your browser.
+Once you completed this steps you should see the app running at: http://localhost:8080/ in your browser.
 
 ## Author 👤
 
