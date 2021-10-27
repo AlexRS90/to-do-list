@@ -1,0 +1,64 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.container {
+  flex-direction: column;
+  border: 2px solid #000;
+  width: 40%;
+}
+
+.container > * {
+  border-bottom: 1px solid #000;
+  padding: 10px 20px;
+}
+
+.d-between {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.new-task {
+  width: 100%;
+  border-bottom: 1px solid #000;
+}
+
+.bg-color {
+  flex-direction: column;
+  padding: 0;
+}
+
+.new-task:nth-child(odd) {
+  background-color: #e6d8c8;
+}
+
+.new-task:nth-child(even) {
+  background-color: bisque;
+}
+
+.input-text {
+  border: none;
+  font-style: italic;
+  padding: 0;
+  font-size: 20px;
+}
+
+.check-task {
+  align-items: center;
+  gap: 10px;
+}
+
+.clear {
+  text-decoration: none;
+  color: #000;
+  background-color: #d3d3d3;
+}
+
+.clear p {
+  text-align: center;
+}
