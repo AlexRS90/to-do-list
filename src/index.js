@@ -19,7 +19,7 @@ const listToDo = [
     description: 'Microverse task',
     completed: false,
     index: 3,
-  }
+  },
 ];
 
 let newTask = '';
@@ -36,19 +36,3 @@ listToDo.forEach((task) => {
 document.querySelector('.bg-color').innerHTML += newTask;
 document.querySelector('#loadImg').src = Load;
 document.querySelector('#returnImg').src = Back;
-
-function component() {
-    const element = document.createElement('div');
-  
-    // Lodash, now imported by this script
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-    element.classList.add('hello');
-  
-     // Add the image to our existing div.
-    
-
-    element.appendChild(myIcon);
-    return element;
-  }
-  
-  document.body.appendChild(component());

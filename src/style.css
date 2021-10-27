@@ -13,7 +13,7 @@ body {
   width: 40%;
 }
 
-.container > *  {
+.container > * {
   border-bottom: 1px solid #000;
   padding: 10px 20px;
 }
