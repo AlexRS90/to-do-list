@@ -1,11 +1,7 @@
+import { loadThings } from './index.js';
 import Dots from './icons/dots.png';
 
-export { listToDo, loadTask, getTask };
-
-import { loadThings } from './index.js';
-
-
-var listToDo = [
+export let listToDo = [
   {
     description: 'Take the kids to the school',
     completed: false,
@@ -23,11 +19,11 @@ var listToDo = [
   },
 ];
 
-function loadTask() {
+export function loadTask() {
   localStorage.setItem('lista', JSON.stringify(listToDo));
 }
 
-function getTask() {
+export function getTask() {
   if (localStorage.getItem('lista')) {
     const hola = JSON.parse(localStorage.getItem('lista'));
     listToDo = hola;
@@ -43,7 +39,7 @@ function getTask() {
       <a href="#"><img src="${Dots}" alt="move order"></a>
     </div>`;
   });
- 
+
   document.querySelector('.bg-color').innerHTML = newTask;
   const arr = document.querySelectorAll('.check');
   listToDo.forEach((item, index) => {
