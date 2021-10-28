@@ -1,8 +1,11 @@
 import Dots from './icons/dots.png';
-import { loadThings } from './index.js';
-export {getTask, loadTask, listToDo};
 
-let listToDo = [
+export { listToDo, loadTask, getTask };
+
+import { loadThings } from './index.js';
+
+
+var listToDo = [
   {
     description: 'Take the kids to the school',
     completed: false,
@@ -24,11 +27,12 @@ function loadTask() {
   localStorage.setItem('lista', JSON.stringify(listToDo));
 }
 
-function getTask() {  
+function getTask() {
   if (localStorage.getItem('lista')) {
     const hola = JSON.parse(localStorage.getItem('lista'));
     listToDo = hola;
   }
+
   let newTask = '';
   listToDo.forEach((task) => {
     newTask += `<div class="new-task d-flex d-between">
@@ -44,7 +48,7 @@ function getTask() {
   const arr = document.querySelectorAll('.check');
   listToDo.forEach((item, index) => {
     arr[index].checked = item.completed;
-    if(item.completed) {
+    if (item.completed) {
       arr[index].parentElement.classList.add('overText');
     } else {
       arr[index].parentElement.classList.remove('overText');
