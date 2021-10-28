@@ -1,7 +1,6 @@
-import { loadThings } from './index.js';
 import Dots from './icons/dots.png';
 
-export let listToDo = [
+let listToDo = [
   {
     description: 'Take the kids to the school',
     completed: false,
@@ -19,11 +18,11 @@ export let listToDo = [
   },
 ];
 
-export function loadTask() {
+function loadTask() {
   localStorage.setItem('lista', JSON.stringify(listToDo));
 }
 
-export function getTask() {
+function getTask() {
   if (localStorage.getItem('lista')) {
     const hola = JSON.parse(localStorage.getItem('lista'));
     listToDo = hola;
@@ -50,5 +49,25 @@ export function getTask() {
       arr[index].parentElement.classList.remove('overText');
     }
   });
+
+  function checkStatus(box) {
+    listToDo.forEach((el) => {
+      if (box.innerText === el.description) {
+        el.completed = !el.completed;
+      }
+    });
+    loadTask();
+    getTask();
+  }
+
+  function loadThings() {
+    document.querySelectorAll('.check').forEach((item) => {
+      item.addEventListener('click', () => {
+        checkStatus(item.parentElement);
+      });
+    });
+  }
+
   loadThings();
 }
+export { getTask, loadTask };
