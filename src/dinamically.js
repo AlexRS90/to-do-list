@@ -1,4 +1,5 @@
 import Dots from './icons/dots.png';
+import Trash from './icons/delete.png';
 
 let listToDo = [
   {
@@ -33,20 +34,25 @@ function getTask() {
     newTask += `<div class="new-task d-flex d-between">
       <div class="d-flex check-task">
       <input class="check" type="checkbox">
-      <p>${task.description}</p>
+      <p class="m-task" contenteditable="true">${task.description}</p>
       </div>
-      <a href="#"><img src="${Dots}" alt="move order"></a>
+      <a href="#"><img class="c-img" src="${Dots}" alt="move order"></a>
     </div>`;
   });
 
   document.querySelector('.bg-color').innerHTML = newTask;
   const arr = document.querySelectorAll('.check');
+  const arrDelete = document.querySelectorAll('.c-img');
+  const arrMTask = document.querySelectorAll('.m-task');
   listToDo.forEach((item, index) => {
     arr[index].checked = item.completed;
     if (item.completed) {
       arr[index].parentElement.classList.add('overText');
+      arrDelete[index].src = Trash;
+      arrMTask[index].contenteditable = 'false';
     } else {
       arr[index].parentElement.classList.remove('overText');
+      arrMTask[index].contenteditable = `true`;
     }
   });
 
@@ -70,4 +76,5 @@ function getTask() {
 
   loadThings();
 }
-export { getTask, loadTask };
+
+export { getTask, loadTask, listToDo };

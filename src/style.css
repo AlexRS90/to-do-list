@@ -44,7 +44,7 @@ body {
 .input-text {
   border: none;
   font-style: italic;
-  padding: 0;
+  padding: 10px;
   font-size: 20px;
 }
 
