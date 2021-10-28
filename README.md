@@ -4,7 +4,7 @@
 
 > Webpack Implementation.
 
-![screenshot](ssProject.png)
+![screenshot](ssMilestone2.png)
 
 - Milestone 1:
  - Setup webpack
