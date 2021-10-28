@@ -62,3 +62,8 @@ body {
 .clear p {
   text-align: center;
 }
+
+.overText {
+  text-decoration: line-through;
+  color: gray;
+}

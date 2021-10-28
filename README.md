@@ -4,12 +4,17 @@
 
 > Webpack Implementation.
 
-![screenshot](ssProject.png)
+![screenshot](ssMilestone2.png)
 
-- For this project I:
-- Setup webpack
-- Created a to do list skeleton
-- Display dinamically 3 task from an static array of objects.
+- Milestone 1:
+ - Setup webpack
+ - Created a to do list skeleton
+ - Display dinamically 3 task from an static array of objects
+- Milestone 2: Interactive list:
+ - Created diferents modules to import and export functions
+ - Made checkboxes interactive
+ - Saved all task completed or not at local storage 
+ - Added styles when a task is completed
 
 ## Built With
 
@@ -25,7 +30,7 @@
 - Run the command "npm run build"
 - Run the command "npm run start"
 
-Once you completed this steps you shuold see the app running at: http://localhost:8080/ in your browser.
+Once you completed this steps you should see the app running at: http://localhost:8080/ in your browser.
 
 ## Author 👤
 
