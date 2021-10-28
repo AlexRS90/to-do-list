@@ -6,10 +6,15 @@
 
 ![screenshot](ssProject.png)
 
-- For this project I:
-- Setup webpack
-- Created a to do list skeleton
-- Display dinamically 3 task from an static array of objects.
+- Milestone 1:
+ - Setup webpack
+ - Created a to do list skeleton
+ - Display dinamically 3 task from an static array of objects
+- Milestone 2: Interactive list:
+ - Created diferents modules to import and export functions
+ - Made checkboxes interactive
+ - Saved all task completed or not at local storage 
+ - Added styles when a task is completed
 
 ## Built With
 
