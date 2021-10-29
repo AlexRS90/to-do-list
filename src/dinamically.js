@@ -1,5 +1,7 @@
 import Dots from './icons/dots.png';
 import Trash from './icons/delete.png';
+import { update } from 'lodash';
+import { getEventListeners } from 'events';
 
 let listToDo = [
   {
@@ -34,7 +36,7 @@ function getTask() {
     newTask += `<div class="new-task d-flex d-between">
       <div class="d-flex check-task">
       <input class="check" type="checkbox">
-      <p class="m-task" contenteditable="true">${task.description}</p>
+      <p class="m-task" tabindex="0" contenteditable="true">${task.description}</p>
       </div>
       <a href="#"><img class="c-img" src="${Dots}" alt="move order"></a>
     </div>`;
@@ -49,7 +51,10 @@ function getTask() {
     if (item.completed) {
       arr[index].parentElement.classList.add('overText');
       arrDelete[index].src = Trash;
-      arrMTask[index].contenteditable = 'false';
+      arrMTask[index].setAttribute('contenteditable', 'false');
+      arrDelete[index].addEventListener('click', () => {
+        console.log("row "+ index);
+      })
     } else {
       arr[index].parentElement.classList.remove('overText');
       arrMTask[index].contenteditable = `true`;
@@ -73,8 +78,41 @@ function getTask() {
       });
     });
   }
-
+  
   loadThings();
+
+  function updateTask(i) {
+    document.querySelectorAll('.m-task')[i-1].addEventListener('focusout', () => {
+      listToDo[i-1].description = document.querySelectorAll('.m-task')[i-1].innerText;
+      console.log(listToDo);
+      console.log(getEventListeners);
+      loadTask();
+    });
+    document.querySelectorAll('.m-task')[i-1].removeEventListener('focusout', () => {
+
+    });
+  }
+
+  function getPosition(index) {
+    listToDo.forEach((currPos) => {
+      if (currPos.description === index.innerText) {
+        console.log("Paso el index");
+        updateTask(currPos.index);
+      }
+    });
+  }
+
+  function editTask() {
+    document.querySelectorAll('.m-task').forEach((item) => {
+      item.addEventListener('focus', () => {
+        console.log("focus in")
+        getPosition(item);
+      });
+    });
+  }
+  editTask();
 }
+
+
 
 export { getTask, loadTask, listToDo };
