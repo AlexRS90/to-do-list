@@ -53,8 +53,14 @@ function getTask() {
       arrDelete[index].src = Trash;
       arrMTask[index].setAttribute('contenteditable', 'false');
       arrDelete[index].addEventListener('click', () => {
-        console.log("row "+ index);
-      })
+        listToDo.splice(index, 1);
+        listToDo.forEach((newIndex, i) => {
+          newIndex.index = i+1;
+        });
+        console.log(listToDo);
+        loadTask();
+        getTask();
+      });
     } else {
       arr[index].parentElement.classList.remove('overText');
       arrMTask[index].contenteditable = `true`;
