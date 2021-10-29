@@ -1,6 +1,6 @@
 import * as dinamic from './dinamically.js';
 
-export function addTask() {
+function addTask() {
   const newTask = document.querySelector('.input-text').value;
   if (newTask === '') {
     document.getElementById('val-entry').classList.add('validationEntry');
@@ -16,3 +16,5 @@ export function addTask() {
     document.querySelector('.input-text').value = '';
   }
 }
+
+export default addTask;

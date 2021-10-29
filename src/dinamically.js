@@ -1,8 +1,7 @@
 import Dots from './icons/dots.png';
 import Trash from './icons/delete.png';
-import { getEventListeners } from 'events';
 
-let listToDo = [];
+let listToDo = [];//eslint-disable-line
 
 function loadTask() {
   localStorage.setItem('lista', JSON.stringify(listToDo));
@@ -38,15 +37,14 @@ function getTask() {
       arrDelete[index].addEventListener('click', () => {
         listToDo.splice(index, 1);
         listToDo.forEach((newIndex, i) => {
-          newIndex.index = i+1;
+          newIndex.index = i + 1;
         });
-        console.log(listToDo);
         loadTask();
         getTask();
       });
     } else {
       arr[index].parentElement.classList.remove('overText');
-      arrMTask[index].contenteditable = `true`;
+      arrMTask[index].contenteditable = 'true';
     }
   });
 
@@ -67,25 +65,20 @@ function getTask() {
       });
     });
   }
-  
+
   loadThings();
 
   function updateTask(i) {
-    document.querySelectorAll('.m-task')[i-1].addEventListener('focusout', () => {
-      listToDo[i-1].description = document.querySelectorAll('.m-task')[i-1].innerText;
-      console.log(listToDo);
-      console.log(getEventListeners);
+    document.querySelectorAll('.m-task')[i - 1].addEventListener('focusout', () => {
+      listToDo[i - 1].description = document.querySelectorAll('.m-task')[i - 1].innerText;
       loadTask();
     });
-    document.querySelectorAll('.m-task')[i-1].removeEventListener('focusout', () => {
-
-    });
+    document.querySelectorAll('.m-task')[i - 1].removeEventListener('focusout', () => {});
   }
 
   function getPosition(index) {
     listToDo.forEach((currPos) => {
       if (currPos.description === index.innerText) {
-        console.log("Paso el index");
         updateTask(currPos.index);
       }
     });
@@ -94,7 +87,6 @@ function getTask() {
   function editTask() {
     document.querySelectorAll('.m-task').forEach((item) => {
       item.addEventListener('focus', () => {
-        console.log("focus in")
         getPosition(item);
       });
     });
@@ -107,11 +99,10 @@ document.querySelector('.input-text').addEventListener('focus', () => {
 });
 
 document.querySelector('#delete-all').addEventListener('click', () => {
-  listToDo = listToDo.filter(listToDo => listToDo.completed === false);
+  listToDo = listToDo.filter((listToDo) => listToDo.completed === false);
   listToDo.forEach((newIndex, i) => {
-    newIndex.index = i+1;
+    newIndex.index = i + 1;
   });
-  console.log(listToDo);
   loadTask();
   getTask();
 });

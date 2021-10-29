@@ -4,7 +4,7 @@
 
 > Webpack Implementation.
 
-![screenshot](ssMilestone2.png)
+![screenshot](ssMilestone3.png)
 
 - Milestone 1:
  - Setup webpack
@@ -15,6 +15,12 @@
  - Made checkboxes interactive
  - Saved all task completed or not at local storage 
  - Added styles when a task is completed
+- Milestone 3: add and remove
+ - Now the list is 100% interactive, you can:
+ - Write a new task.
+ - Edit any uncompleted task.
+ - Delete a single task.
+ - Delete all completed tasks.
 
 ## Built With
 
