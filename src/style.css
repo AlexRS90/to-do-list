@@ -7,6 +7,10 @@ body {
   display: flex;
 }
 
+.center {
+  justify-content: center;
+}
+
 .container {
   flex-direction: column;
   border: 2px solid #000;
@@ -23,6 +27,10 @@ body {
   align-items: center;
 }
 
+.top-color {
+  background-color: #d3d3d3;
+}
+
 .new-task {
   width: 100%;
   border-bottom: 1px solid #000;
@@ -34,11 +42,11 @@ body {
 }
 
 .new-task:nth-child(odd) {
-  background-color: #e6d8c8;
+  background-color: #e8d8c8;
 }
 
 .new-task:nth-child(even) {
-  background-color: bisque;
+  background-color: #e1d4bc;
 }
 
 .input-text {
@@ -46,6 +54,16 @@ body {
   font-style: italic;
   padding: 10px;
   font-size: 20px;
+}
+
+.white-color {
+  color: #fff;
+}
+
+.validationEntry {
+  color: red;
+  font-style: italic;
+  visibility: visible;
 }
 
 .check-task {

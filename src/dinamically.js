@@ -1,25 +1,8 @@
 import Dots from './icons/dots.png';
 import Trash from './icons/delete.png';
-import { update } from 'lodash';
 import { getEventListeners } from 'events';
 
-let listToDo = [
-  {
-    description: 'Take the kids to the school',
-    completed: false,
-    index: 1,
-  },
-  {
-    description: 'Cook lunch',
-    completed: false,
-    index: 2,
-  },
-  {
-    description: 'Microverse tasks',
-    completed: false,
-    index: 3,
-  },
-];
+let listToDo = [];
 
 function loadTask() {
   localStorage.setItem('lista', JSON.stringify(listToDo));
@@ -119,6 +102,18 @@ function getTask() {
   editTask();
 }
 
+document.querySelector('.input-text').addEventListener('focus', () => {
+  document.getElementById('val-entry').classList.remove('validationEntry');
+});
 
+document.querySelector('#delete-all').addEventListener('click', () => {
+  listToDo = listToDo.filter(listToDo => listToDo.completed === false);
+  listToDo.forEach((newIndex, i) => {
+    newIndex.index = i+1;
+  });
+  console.log(listToDo);
+  loadTask();
+  getTask();
+});
 
 export { getTask, loadTask, listToDo };
