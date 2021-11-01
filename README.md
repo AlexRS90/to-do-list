@@ -29,6 +29,10 @@
 - Webpack
 - Linters
 
+## Live Demo :computer:
+
+https://alexrs90.github.io/to-do-list/dist/
+
 ## Set up locally
 
 - Open your terminal and run the following command: git clone https://github.com/AlexRS90/to-do-list.git
