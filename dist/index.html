@@ -3,22 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wbpack Exercise</title>
+    <title>To-do List</title>
     <link rel="stylesheet" href="style.css">
 <script defer src="main.js"></script></head>
 <body>
-    <div class="container d-flex">
-        <div class="d-flex d-between">
-            <p>Today's to do</p>
-            <a href="#"><img id="loadImg" src="" alt="reload list"></a>
+    <div class="d-flex center">
+        <div class="container d-flex">
+            <div class="d-flex d-between top-color">
+                <p>Today's to do</p>
+                <a href="#"><img id="loadImg" src="" alt="reload list"></a>
+            </div>
+            <div class="d-flex d-between">
+                <input type="text" placeholder="Add to your list" class="input-text">
+                <p id="val-entry" class="white-color">Write a task</p>
+                <a href="#"><img id="returnImg" src="" alt="return"></a>
+            </div>
+            <div class="d-flex bg-color"></div>
+            <a href="#" class="clear" id="delete-all"><p>Clear all completed</p></a>
         </div>
-        <div class="d-flex d-between">
-            <input type="text" placeholder="Add to your list" class="input-text">
-            <a href="#"><img id="returnImg" src="" alt="return"></a>
-        </div>
-        <div class="d-flex bg-color"></div>
-        <a href="#" class="clear"><p>Clear all completed</p></a>
-    </div>
+</div>
 </body>
 </html>
 
